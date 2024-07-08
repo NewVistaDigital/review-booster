@@ -1,0 +1,65 @@
+---
+import "@fontsource-variable/inter";
+import "~/styles/index.css";
+import Compatibility from "~/components/compatibility.astro";
+const { generator, site } = Astro;
+const image = new URL("social.png", site);
+const description =
+  "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.";
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="generator" content={generator} />
+
+  <title>Review Booster</title>
+  <meta name="description" content={description} />
+
+  <!-- social media -->
+  <meta property="og:title" content="Review Booster" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={site} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="/android-chrome-192x192.png"
+  />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#22c55e" />
+  <meta name="msapplication-TileColor" content="#14532d" />
+  <meta name="theme-color" content="#f9fafb" />
+
+  <script is:inline>
+    document.documentelement.dataset.theme = "light";
+    (function (w, d, e, u, f, l, n) {
+      (w[f] =
+        w[f] ||
+        function () {
+          (w[f].q = w[f].q || []).push(arguments);
+        }),
+        (l = d.createElement(e)),
+        (l.async = 1),
+        (l.src = u),
+        (n = d.getElementsByTagName(e)[0]),
+        n.parentNode.insertBefore(l, n);
+    })(
+      window,
+      document,
+      "script",
+      "https://assets.mailerlite.com/js/universal.js",
+      "ml",
+    );
+    ml("account", "1014085");
+  </script>
+</head>

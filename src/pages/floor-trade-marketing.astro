@@ -1,5 +1,6 @@
 ---
 import BaseHead from "~/components/baseHead.astro";
+import Header from "~/components/header.astro";
 
 import { Image } from "astro:assets";
 import ftmLogo from "~/assets/floor-trade-marketing.png";
@@ -12,7 +13,7 @@ const widths = [650, 800];
   <body
     class="h-full overflow-x-hidden selection:bg-secondary selection:text-white"
   >
-    <ThemeSwitcher />
+    <Header />
     <div class="space-y-12 px-8">
       <h2 class="sr-only text-center font-bold text-2xl">
         Floor Trade Marketing

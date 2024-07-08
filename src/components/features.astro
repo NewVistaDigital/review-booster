@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Do what you do best",
+    description:
+      "Run your business and create happy customers. Happy customers are more willing to share thier experience if you ask.",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "Add ReviewBooster on your phone",
+    description:
+      "We have a webpage with a form just for your customers. No need to download from any app store - request reviews from anywhere on any device.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Add name and email",
+    description:
+      "All you need is your customer's name and email address. Submit this to your ReviewBooster app and we'll handle the rest.",
+    icon: "mdi:email",
+  },
+  {
+    title: "Automated workflows",
+    description:
+      "Our system will send a customized review-request email with special offers. If they don't open the email, they'll get a follow-up email automatically.",
+    icon: "mdi:graph",
+  },
+  {
+    title: "SEO Improvement",
+    description:
+      "Our automations help prevent negative reviews so only the best make it to Google and other platforms, helping boost your SEO.",
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Fully Managed",
+    description:
+      "We manage your Google Business profile and respond to all reviews for you. No AI, just real humans.",
+    icon: "mdi:account-group",
+  },
+];
+---
+
+<ContentSection title="How it works" id="features">
+  <Fragment slot="lead">
+    ReviewBooter comes <span class="text-primary">batteries included</span>. It
+    takes the best parts of
+    <span class="text-primary">automated tools</span>
+    and adds <span class="text-primary">real humans</span> to help boost your reviews
+    on any site you want.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} class="size-full" />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

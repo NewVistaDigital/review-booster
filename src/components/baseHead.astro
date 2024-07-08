@@ -3,9 +3,20 @@ import "@fontsource-variable/inter";
 import "~/styles/index.css";
 import Compatibility from "~/components/compatibility.astro";
 const { generator, site } = Astro;
-const image = new URL("social.png", site);
-const description =
-  "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.";
+const image = new URL("social.jpg", site);
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  index?: "index" | "noIndex";
+}
+
+const {
+  title = "Review Booster",
+  description = "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.",
+  index = true,
+} = Astro.props;
 ---
 
 <head>
@@ -14,17 +25,18 @@ const description =
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta name="generator" content={generator} />
 
+  {index && index == "noIndex" && <meta name="robots" content="noindex" />}
+
   <title>Review Booster</title>
   <meta name="description" content={description} />
 
   <!-- social media -->
-  <meta property="og:title" content="Review Booster" />
+  <meta property="og:title" content={title} />
   <meta property="og:type" content="website" />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image} />
   <meta property="og:url" content={site} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="robots" content="noindex" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

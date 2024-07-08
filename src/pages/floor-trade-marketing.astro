@@ -1,0 +1,81 @@
+---
+import "@fontsource-variable/inter";
+import "~/styles/index.css";
+import ThemeSwitcher from "~/components/theme-switcher.astro";
+import { Image } from "astro:assets";
+import ftmLogo from "~/assets/floor-trade-marketing.png";
+const widths = [650, 800];
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description =
+  "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.";
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Review Booster</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="noindex" />
+
+    <script is:inline>
+      (function (w, d, e, u, f, l, n) {
+        (w[f] =
+          w[f] ||
+          function () {
+            (w[f].q = w[f].q || []).push(arguments);
+          }),
+          (l = d.createElement(e)),
+          (l.async = 1),
+          (l.src = u),
+          (n = d.getElementsByTagName(e)[0]),
+          n.parentNode.insertBefore(l, n);
+      })(
+        window,
+        document,
+        "script",
+        "https://assets.mailerlite.com/js/universal.js",
+        "ml",
+      );
+      ml("account", "1014085");
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden selection:bg-secondary selection:text-white"
+  >
+    <ThemeSwitcher />
+    <div class="space-y-12 px-8">
+      <h2 class="sr-only text-center font-bold text-2xl">
+        Floor Trade Marketing
+      </h2>
+      <Image
+        class="mx-auto w-72"
+        src={ftmLogo}
+        widths={widths}
+        loading="eager"
+        alt="Google 5 star reviews"
+      />
+      <div class="ml-embedded" data-form="cU3Yk0"></div>
+      <p class="text-center text-gray-700">
+        Need help? Reach out to <b><a href="mailto:jesse@floortrademarketing.com"
+          >jesse@floortrademarketing.com</a
+        ></b><br />
+        or call me at <b><a href="tel:7196391470">(719) 639-1470</a></b>
+      </p>
+    </div>
+  </body>
+</html>

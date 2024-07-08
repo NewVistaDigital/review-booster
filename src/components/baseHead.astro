@@ -15,7 +15,7 @@ interface Props {
 const {
   title = "Review Booster",
   description = "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.",
-  index = true,
+  index = "noIndex",
 } = Astro.props;
 ---
 
@@ -52,8 +52,8 @@ const {
   <meta name="msapplication-TileColor" content="#14532d" />
   <meta name="theme-color" content="#f9fafb" />
 
+  <!-- MailerLite Universal -->
   <script is:inline>
-    document.documentelement.dataset.theme = "light";
     (function (w, d, e, u, f, l, n) {
       (w[f] =
         w[f] ||
@@ -74,4 +74,5 @@ const {
     );
     ml("account", "1014085");
   </script>
+  <!-- End MailerLite Universal -->
 </head>

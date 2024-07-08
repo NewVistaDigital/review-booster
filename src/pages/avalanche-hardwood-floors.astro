@@ -8,7 +8,7 @@ import ahfLogo from "~/assets/logo-ahf.png";
 const widths = [650, 800];
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const image = new URL("social.png", site);
 const description =
   "Get more 5-star reviews on Google, Yelp, and more. We fully manage your profile for you. No AI, just real humans.";
 ---
@@ -25,7 +25,7 @@ const description =
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="Review Booster" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />

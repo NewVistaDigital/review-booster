@@ -3,7 +3,7 @@ import BaseHead from "~/components/baseHead.astro";
 import Header from "~/components/header.astro";
 
 import { Image } from "astro:assets";
-import handyLogo from "~/assets/handy-dad.png";
+import socoLogo from "~/assets/soco-logo.png";
 const widths = [650, 800];
 ---
 
@@ -15,17 +15,15 @@ const widths = [650, 800];
   >
     <Header />
     <div class="space-y-12 px-8">
-      <h2 class="sr-only text-center font-bold text-2xl">
-        Floor Trade Marketing
-      </h2>
+      <h2 class="sr-only text-center font-bold text-2xl">SoCo Customs</h2>
       <Image
         class="mx-auto w-72"
-        src={handyLogo}
+        src={socoLogo}
         widths={widths}
         loading="eager"
         alt="Google 5 star reviews"
       />
-      <div class="ml-embedded" data-form="ouoGaw">Loading...</div>
+      <div class="ml-embedded" data-form="KqA7XW">Loading...</div>
       <p class="text-center text-gray-700">
         Need help? Reach out to <b
           ><a href="mailto:jesse@newvistadigital.com"
@@ -35,5 +33,26 @@ const widths = [650, 800];
         or call me at <b><a href="tel:7196391470">(719) 639-1470</a></b>
       </p>
     </div>
+    <script is:inline>
+      (function (w, d, e, u, f, l, n) {
+        (w[f] =
+          w[f] ||
+          function () {
+            (w[f].q = w[f].q || []).push(arguments);
+          }),
+          (l = d.createElement(e)),
+          (l.async = 1),
+          (l.src = u),
+          (n = d.getElementsByTagName(e)[0]),
+          n.parentNode.insertBefore(l, n);
+      })(
+        window,
+        document,
+        "script",
+        "https://assets.mailerlite.com/js/universal.js",
+        "ml",
+      );
+      ml("account", "1110919");
+    </script>
   </body>
 </html>
